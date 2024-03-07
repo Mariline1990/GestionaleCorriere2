@@ -8,21 +8,25 @@ namespace GestionaleCorriere.Models
 {
     public class CodiceTracciamento
     {
-        public class Codice
-        {
+        
             public string CF { get; set; }
             
             public string PartitaIva{ get; set; }
 
             public string CodiceDiTracciamento { get; set; }
 
-            public Codice( string partitaIva ,string codice_fiscale, string tracciamento )
+            public CodiceTracciamento()
+            {
+                
+            }
+
+            public CodiceTracciamento( string partitaIva ,string codice_fiscale, string tracciamento )
             {
                 CF = codice_fiscale;
                 PartitaIva = partitaIva;
                 CodiceDiTracciamento = tracciamento;
             }   
 
-        }
+        
     }
 }
