@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Applicazione ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark navbarHome" >
+
+        <div class="container">
+           
+            <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" padding-top="10px" style="margin-inline: 20px" viewBox="0 0 448 512">-<path d="M50.7 58.5L0 160H208V32H93.7C75.5 32 58.9 42.3 50.7 58.5zM240 160H448L397.3 58.5C389.1 42.3 372.5 32 354.3 32H240V160zm208 32H0V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192z" /></svg>
+            
+
+            @Html.ActionLink("FlashCorriere", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Attiva/Disattiva spostamento" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="container">
+                <div class="navbar-nav d-flex justify-content-between" >
+                    <div>
+                        <button type="button" style=" background-color: #F3B95F; border-radius: 5px; border-style: none ;margin-right : 10px">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</button>
+                        <!--Aggiunta di un controllo per verificare se l'utente è un amministratore e visulizzo i pulsanti di creazione di un cliente e di una spedizione -->
+                        <!-- E nell' Else rendo visibile il bottone Accedi (log_in) prima che l-utente o L'admin faccia l'accesso-->
+                    </div>
+                     
+                    <div>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <Button type="button" style=" background-color: #F3B95F; border-radius: 5px; border-style: none; margin-right: 10px; padding-block: 10px ; margin-left:300px">@Html.ActionLink("Nuovo Cliente", "Create", "CLiente", new { area = "" }, new { @class = "text-white" })</Button>
+                            <Button type="button" style=" background-color: #F3B95F; border-radius: 5px; border-style: none; margin-right: 10px; padding-block: 10px">@Html.ActionLink("Aggiungi Spedizione", "Create", "Spedizione", new { area = "" }, new { @class = "text-white" })</Button>
+
+                        }
+                    </div>
+                    <div>
+                        @if (!User.IsInRole("Admin") && !User.IsInRole("User"))
+                        {
+                            <Button type="button" style=" background-color: #6895D2; border-radius: 15px; padding-inline: 20px; border-style: none; padding-block: 10px; border:solid 2px white ">@Html.ActionLink("Accedi", "Utente", "Utente", new { area = "" }, new { @class = "text-white text-white text-decoration-none" })</Button>
+                        }
+                    </div>
+                       
+                            @if (User.IsInRole("Admin") || User.IsInRole("User"))
+                            {
+
+                                <form action="@Url.Action("Delete", "Utente")" method="post" class="d-block">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" style="background-color: #6895D2; border-radius: 15px; border-style: none; color: white; padding-block: 10px; border: solid 2px white">
+                                        Logout
+                                    </button>
+                                </form>
+                            }
+            </div>
+
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")   
+    @RenderSection("scripts", required: false)
+</body>
+</html> 
