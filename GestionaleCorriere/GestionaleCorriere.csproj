@@ -128,7 +128,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CodiceTracciamentoController.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\CodiceTracciamento.cs" />
     <Compile Include="Models\Utente.cs" />
     <Compile Include="Models\SiteRoles.cs" />
     <Compile Include="Models\Spedizione.cs" />
@@ -155,6 +157,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\Cattura29.png" />
+    <Content Include="images\contratto-spedizione.jpg" />
+    <Content Include="images\corriere-ico.png" />
+    <Content Include="images\icone-pagine-informative-metodi-di-spedizione.jpg" />
+    <Content Include="images\Pickup-delivery-times-IL.png" />
     <Content Include="images\Preventivo.jpg" />
     <Content Include="images\Punti_Di_Raccolta-1024x538.jpg" />
     <Content Include="images\Screenshot 2024-03-06 105150.png" />
@@ -187,10 +193,14 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Spedizione\Create.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Utente\Utente.cshtml" />
+    <Content Include="Views\Spedizione\Create.cshtml" />
+    <Content Include="Views\Spedizione\Edit.cshtml" />
+    <Content Include="Views\Spedizione\List.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\CodiceTracciamento\CodiceTracciamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<GestionaleCorriere.Models.Spedizione>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Cod_tracciamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_spedizione)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Città_destinazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Indirizzo_destinazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costo_spedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_consegna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nominativo_destinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stato_attuale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Luogo_attuale)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Cod_tracciamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_spedizione)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Città_destinazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Indirizzo_destinazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costo_spedizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_consegna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nominativo_destinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stato_attuale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luogo_attuale)
+        </td>
+       
+    </tr>
+}
+
+</table>

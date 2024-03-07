@@ -45,14 +45,20 @@ namespace GestionaleCorriere.Models
         [Display(Name = "Nominativo destinatario")]
         [Required(ErrorMessage = "Nominativo destinatario è obbligatorio")] 
         public string Nominativo_destinatario { get; set; }
-       
-    public Spedizione()
+        [Display(Name = "Stato attuale")]
+        [Required(ErrorMessage = "Lo stato è obbligatorio")]
+        public string Stato_attuale { get; set; }
+        [Display(Name = "Luogo")]
+        [Required(ErrorMessage = "Il luogo è obbligatorio")]
+        public string Luogo_attuale { get; set; }
+
+        public Spedizione()
         {
 
         }
  
 
-      public Spedizione(int id_spedizione, int fk_id_cliente, string cod_tracciamento, DateTime data_spedizione, decimal peso_spedizione, string città_destinazione,string indirizzo, decimal costo_spedizione, DateTime data_consegna, string nominativo_destinatario)
+      public Spedizione(int id_spedizione, int fk_id_cliente, string cod_tracciamento, DateTime data_spedizione, decimal peso_spedizione, string città_destinazione,string indirizzo, decimal costo_spedizione, DateTime data_consegna, string nominativo_destinatario, string stato_attuale, string luogo_attuale)
         {
             Id_spedizione = id_spedizione;
             Fk_Id_Cliente = fk_id_cliente;
@@ -64,6 +70,8 @@ namespace GestionaleCorriere.Models
             Costo_spedizione = costo_spedizione;
             Data_consegna = data_consegna;
             Nominativo_destinatario = nominativo_destinatario;
+            Stato_attuale= stato_attuale;
+            Luogo_attuale= luogo_attuale;
         }
 
     }

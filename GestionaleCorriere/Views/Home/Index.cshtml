@@ -31,20 +31,84 @@
                 Benvenuti nella nostra casa online dedicata alle spedizioni, il luogo ideale dove la convenienza e l'efficienza si incontrano per offrirvi un servizio di consegna senza pari. Siamo entusiasti di accogliervi nel nostro spazio digitale, progettato per semplificare il processo di spedizione e rendere ogni consegna un'esperienza straordinaria.
             </p>
         </div>
-        <div class="row ">
 
-            <div class="col p-0">
-                <div class="card '" style="width: 18rem;">
-                    <img src="~/images/Cattura29.png" class="card-img-top" alt="...">
-                    <div class="card-body navMain">
-                        <h4 class="card-title">Spedizione</h4>
-                        <p class="card-text fs-4">Controlla lo stato della tua spedizione inserendo il codice.</p>
-                        <a href="#" class="btn colorb">Controlla</a>
+        <div class="row ">
+            <div class="card mb-3 mt-4 me-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/images/Pickup-delivery-times-IL.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            <div class="card mb-3 mt-4" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/images/corriere-ico.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/images/icone-pagine-informative-metodi-di-spedizione.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row ">
+            @if (User.IsInRole("User"))
+            {
+
+                <div class="col p-0">
+
+                    <div class="card '" style="width: 18rem;">
+                        <img src="~/images/Cattura29.png" class="card-img-top" alt="...">
+                        <div class="card-body navMain">
+                            <h4 class="card-title">Spedizione</h4>
+                            <p class="card-text fs-4">Controlla lo stato della tua spedizione inserendo il codice.</p>
+                            <a class="btn btn-primary my-1" href="@Url.Action("List", "Home")">Controlla</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="col p-0">
+                    <div class="card  mt-4" style="width: 18rem;">
+                        <img src="~/images/contratto-spedizione.jpg" class="card-img-top" alt="...">
+                        <div class="card-body navMain">
+                            <h4 class="card-title">Database</h4>
+                            <p class="card-text fs-4">Controlla lo stato delle spedizioni.</p>
+                            <a class="btn btn-primary my-1" href="@Url.Action("List", "Spedizione")">Gestisci</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+
 
 
     </div>
