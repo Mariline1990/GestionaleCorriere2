@@ -1,12 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Applicazione ASP.NET</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+   
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark navbarHome" >
@@ -55,7 +59,7 @@
                                     </button>
                                 </form>
                             }
-            </div>
+                </div>
 
         </div>
     </nav>
@@ -63,6 +67,33 @@
         @RenderBody()
         <hr />
         <footer>
+            <div class="container ">
+                <div class="row d-flex justify-content-between " style="border-block:solid 2px white; border-radius: 10px">
+                    <div class="col-3 p-3">
+                        <h6 class="fw-bold" style="color: rgb(208, 72, 72)">Chi Siamo:</h6>
+                        <p>
+                            
+                            Siamo un team appassionato e dedicato, impegnato a facilitare le vostre spedizioni in modo rapido, sicuro ed economicamente vantaggioso. Con anni di esperienza nel settore delle spedizioni, garantiamo un servizio affidabile che si adatta alle vostre esigenze.
+                        </p>
+                    </div>
+                    <div class="col-3 p-3">
+                        <h6 class="fw-bold" style="color: rgb(208, 72, 72)"> Sicurezza al Primo Posto::</h6>
+                        <p>
+
+                            
+                            La sicurezza dei vostri pacchi è la nostra priorità assoluta. Collaboriamo solo con corrieri affidabili e garantiamo che ogni spedizione sia adeguatamente imballata e protetta per garantire una consegna senza danni.
+                        </p>
+                    </div>
+                    <div class="col-3 p-3">
+                        <h6 class="fw-bold" style="color: rgb(208, 72, 72)">Contatti:</h6>
+                        <p>
+
+                            I nostri uffici sono presso<br /> <a href="link"> Milano</a> <br /> <a href="link">Torino</a> <br /><a href="link">Genova</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
             <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET</p>
         </footer>
     </div>

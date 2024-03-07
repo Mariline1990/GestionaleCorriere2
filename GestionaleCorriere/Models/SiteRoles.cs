@@ -41,11 +41,9 @@ namespace GestionaleCorriere.Models
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Gestionale"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
-
+            conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT Ruolo FROM log_in WHERE Utente=@Utente", conn);
             cmd.Parameters.AddWithValue("Utente", username);
-
-            conn.Open();
 
             SqlDataReader reader = cmd.ExecuteReader();
 

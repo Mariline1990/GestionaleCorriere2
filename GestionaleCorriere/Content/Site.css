@@ -1,8 +1,13 @@
 ﻿/* Set padding to keep content from hitting the edges */
 
-
+* {
+    font-family: indie-flower, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
 body {
     background-color: #FDE767;
+   
 }
 .body-content {
     margin-top: 15px;
